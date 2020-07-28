@@ -246,7 +246,8 @@ export class DebugAdapter implements IDisposable {
   async _onVariables(params: Dap.VariablesParams): Promise<Dap.VariablesResult> {
     const variableStore = this._findVariableStore(params.variablesReference);
     if (!variableStore) return { variables: [] };
-    return { variables: await variableStore.getVariables(params) };
+    const variables = await variableStore.getVariables(params);
+    return { variables: variables };
   }
 
   async _onSetVariable(params: Dap.SetVariableParams): Promise<Dap.SetVariableResult | Dap.Error> {

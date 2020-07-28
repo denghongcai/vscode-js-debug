@@ -15,7 +15,9 @@
             "program": "${workspaceFolder}\\app.ts",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
-            ]
+            ],
+            __autoExpandGetters: true,
+            "customDescriptionGenerator": "function () { return 4; }",
         }
     ]
 }
